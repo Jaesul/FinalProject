@@ -3,16 +3,14 @@
 <title></title>
 </head>
 <body>
-<p>STRAVA+WEATHER</p>
+<h1>STRAVA+WEATHER</h1>
     {% if current_user %}
-    Please enter a ride ID
-    This program will tell you the weather at the start and end of the ride.
-    The weather at the end of the ride will not be the current weather but the weather at the end of the ride
-    given the past ride's time
-    <form action="stravaresults" method="post">
+    <p>This program will tell you the weather at the loction of the start and end of the ride, given the ride ID. {{current_user.access_token}}
+    </p>
+    <form action="/stravaresults" method="post">
        <!-- Here is only a basic form. Please add more HTML codes based on your design. !-->
-        <p>Input the tag</p>
-       <input type="text" id="search_input" name="search_input"/>
+        <label for="ride_id">Please enter a ride ID</label>
+       <input type="text" id="ride_id" name="ride_id"/>
        <input type="submit" value="Submit" name="gobtn"/>
     </form>
      <p><a href="/auth/logout">Log out</a></p>
