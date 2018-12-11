@@ -1,0 +1,25 @@
+<html>
+<head>
+<title></title>
+</head>
+<body>
+<p>STRAVA+WEATHER</p>
+    {% if current_user %}
+    Please enter a ride ID
+    This program will tell you the weather at the start and end of the ride.
+    The weather at the end of the ride will not be the current weather but the weather at the end of the ride
+    given the past ride's time
+    <form action="stravaresults" method="post">
+       <!-- Here is only a basic form. Please add more HTML codes based on your design. !-->
+        <p>Input the tag</p>
+       <input type="text" id="search_input" name="search_input"/>
+       <input type="submit" value="Submit" name="gobtn"/>
+    </form>
+     <p><a href="/auth/logout">Log out</a></p>
+    {% else %}
+     <p>You are not yet logged into this site</p>
+     <p><a href="/auth/login">Log in with STRAVA</a></p>
+    {% endif %}
+</body>
+</html>
+
