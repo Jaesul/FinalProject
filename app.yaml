@@ -6,7 +6,7 @@ handlers:
 - url: /assets
   static_dir: assets
 
-- url: .*
+- url: /.*
   script: main.application
 
 libraries:

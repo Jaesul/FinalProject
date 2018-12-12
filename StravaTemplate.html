@@ -1,23 +1,64 @@
 <html>
 <head>
-<title></title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.bg {
+  /* The image used */
+  background-image: url("https://www.assos.com/Webstore%20Images/cms/leaderboard/Leaderboard-banner-desktop-1.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
+}
+.container {
+position: absolute;
+top: 8%;
+left: 16%;
+-moz-transform: translateX(-50%) translateY(-50%);
+-webkit-transform: translateX(-50%) translateY(-50%);
+transform: translateX(-50%) translateY(-50%);
+}
+
+    .center {
+position: absolute;
+top: 55%;
+left: 50%;
+-moz-transform: translateX(-50%) translateY(-50%);
+-webkit-transform: translateX(-50%) translateY(-50%);
+transform: translateX(-50%) translateY(-50%);
+}
+
+</style>
 </head>
-<body>
-<h1>STRAVA+WEATHER</h1>
-    {% if current_user %}
-    <p>This program will tell you the weather at the loction of the start and end of the ride, given the ride ID. {{current_user.access_token}}
-    </p>
-    <form action="/stravaresults" method="post">
+<body text = #f5f5f5>
+
+<div class="bg" >
+    <font face = "DengXian" size = "4">
+        <div class = 'container'><center><h1>STRAVA | WEATHER</h1></center></div>
+    </font>
+
+    <div class = center><strong><center> <font face = "DengXian" size = "6">Let's get that next KOM {{token}}</font>
+    <p>                </p>
+    <p>                </p>
+    <font face = "DengXian" size = "3.5"><form action="stravaresults" method="post">
        <!-- Here is only a basic form. Please add more HTML codes based on your design. !-->
-        <label for="ride_id">Please enter a ride ID</label>
-       <input type="text" id="ride_id" name="ride_id"/>
+        <label for="search_input">Ride ID</label>
+       <input type="text" id="search_input" name="search_input"/>
        <input type="submit" value="Submit" name="gobtn"/>
-    </form>
-     <p><a href="/auth/logout">Log out</a></p>
-    {% else %}
-     <p>You are not yet logged into this site</p>
-     <p><a href="/auth/login">Log in with STRAVA</a></p>
-    {% endif %}
+    </form></font>
+    </center></strong></div></font><br /></div>
+</div>
+
+
 </body>
 </html>
-
